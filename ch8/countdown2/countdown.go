@@ -35,6 +35,8 @@ func main() {
 	case <-abort:
 		fmt.Println("Launch aborted!")
 		return
+		//default:
+		//	fmt.Println("无值时执行")
 	}
 	launch()
 }
