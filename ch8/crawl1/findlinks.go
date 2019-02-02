@@ -14,7 +14,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 
 	"gopl.io/ch5/links"
 )
@@ -36,8 +35,11 @@ func main() {
 	worklist := make(chan []string)
 
 	// Start with the command-line arguments.
-	go func() { worklist <- os.Args[1:] }()
-
+	//	go func() { worklist <- os.Args[1:] }()
+	go func() {
+		o := []string{1: "https://github.com/"}
+		worklist <- o[1:]
+	}()
 	// Crawl the web concurrently.
 	seen := make(map[string]bool)
 	for list := range worklist {

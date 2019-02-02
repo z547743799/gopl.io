@@ -23,10 +23,16 @@ func main() {
 	// Squarer
 	go func() {
 		for {
-			x := <-naturals
+			x, ok := <-naturals
+			if !ok {
+				break
+			}
 			squares <- x * x
 		}
+		close(naturals)
 	}()
+	//close 关闭后若继续传值会panic
+	//传出的值也会是是默认值
 
 	// Printer (in main goroutine)
 	for {

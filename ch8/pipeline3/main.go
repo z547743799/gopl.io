@@ -9,7 +9,7 @@ package main
 
 import "fmt"
 
-//!+
+//!+双方向通道类型提升成多方向通道
 func counter(out chan<- int) {
 	for x := 0; x < 100; x++ {
 		out <- x

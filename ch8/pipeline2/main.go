@@ -28,6 +28,7 @@ func main() {
 		}
 		close(squares)
 	}()
+	//所有数据全部发送成功时才需要关闭channle
 
 	// Printer (in main goroutine)
 	for x := range squares {

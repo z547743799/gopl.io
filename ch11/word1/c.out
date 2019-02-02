@@ -1,0 +1,5 @@
+mode: set
+gopl.io/ch11/word1/word.go:12.34,13.19 1 0
+gopl.io/ch11/word1/word.go:18.2,18.13 1 0
+gopl.io/ch11/word1/word.go:13.19,14.28 1 0
+gopl.io/ch11/word1/word.go:14.28,16.4 1 0
