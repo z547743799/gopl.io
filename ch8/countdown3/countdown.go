@@ -39,7 +39,8 @@ func main() {
 		case <-abort:
 			fmt.Println("Launch aborted!")
 			return
-			//default: 循环执行的话就是"轮询channel"
+			//循环执行的话就是"轮询channel"
+			//default:
 			//无值时执行
 			//	fmt.Println("---")
 		}
