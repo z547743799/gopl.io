@@ -15,6 +15,7 @@ import (
 )
 
 //!+broadcaster
+//通道类型
 type client chan<- string // an outgoing message channel
 
 var (
@@ -30,10 +31,11 @@ func broadcaster() {
 		case msg := <-messages:
 			// Broadcast incoming message to all
 			// clients' outgoing message channels.
+			//遍历所有clin 通道并传入值
 			for cli := range clients {
 				cli <- msg
 			}
-
+			//将clin 传入通道
 		case cli := <-entering:
 			clients[cli] = true
 
